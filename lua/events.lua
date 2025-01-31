@@ -69,6 +69,7 @@ local function modify_to_under_cursor(config)
   if i == false then
       return
   end
+  CloseOtherBuffers()
   local rename_fun = config.patterns[i].rename
   local new_dir = rename_fun(text,config.patterns[i])
   open_all_files_directory(new_dir)
