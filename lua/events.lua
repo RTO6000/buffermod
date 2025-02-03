@@ -72,7 +72,7 @@ local function modify_to_under_cursor(config)
   end
   CloseOtherBuffers()
   local rename_fun = config.patterns[i].rename
-  local new_dir = rename_fun(text,config.patterns[i])
+  local new_dir = rename_fun(text:match(config.patterns[i].regex),config.patterns[i])
   open_all_files_directory(new_dir)
 end
 
