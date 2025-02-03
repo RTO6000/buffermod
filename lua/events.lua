@@ -23,6 +23,7 @@ local function modify_filename(config)
     if vim.fn.isdirectory(new_name) == 1 and
         config.open_all_files==true then 
         open_all_files_directory(new_name);
+        vim.api.nvim_buf_delete(buf, { force = true })
     else
     local old_name = vim.api.nvim_buf_set_name(buf,new_name)
     end
